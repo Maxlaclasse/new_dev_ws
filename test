@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <!-- Wheel Information -->
+        <leftJoint>left_wheel_joint</leftJoint>
+        <rightJoint>right_wheel_joint</rightJoint>
+        <wheelSeparation>0.25</wheelSeparation>
+        <wheelDiameter>0.065</wheelDiameter>
+
+        <!-- Limits -->
+        <max_wheel_torque>200</max_wheel_torque>
+        <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+        <!-- Output -->
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_link</robotBaseFrame>
+
+        <!-- use the joint states published by your program -->
+        <odometrySource>world</odometrySource>
+
+        <publishOdom>true</publishOdom>
+        <publishOdomTF>true</publishOdomTF>
+        <publishWheelTF>false</publishWheelTF>
+
+        <!-- specify the topics for command and odometry -->
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+
+        <publishWheelJointState>false</publishWheelJointState>
+
+        <!-- set the wheel acceleration and torque limits -->
+        <wheelAcceleration>10.0</wheelAcceleration>
+        <wheelTorque>200</wheelTorque>
+
+        <!-- odometrie -->
+
+
+        </plugin>
+    </gazebo>
+
+</robot>
